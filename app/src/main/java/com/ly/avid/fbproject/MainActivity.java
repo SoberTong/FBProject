@@ -331,8 +331,11 @@ public class MainActivity extends AppCompatActivity {
         view.setDrawingCacheEnabled(true);
         Bitmap background = view.getDrawingCache();
         Bitmap front = BitmapFactory.decodeResource(getResources(), R.drawable.front);
+        //合成
         Bitmap newbmp = compositeBitmap(background, front, 200, 300);
+        //画文字
         Bitmap showBmp = drawTextAtBitmap(newbmp, "By Lean", 400, 450);
+
         SharePhoto photo = new SharePhoto.Builder()
                 .setBitmap(showBmp)
                 .build();
